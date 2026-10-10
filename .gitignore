@@ -1,0 +1,29 @@
+# Virtual environment
+venv/
+
+# Compiled bytecode
+__pycache__/
+*.pyc
+
+# InferenceData (.nc): heavy binaries, regenerable by running the script that produces them
+# (see PRODUCES in the header of each script). A fit of the linear model is ~90 MB and 2 minutes.
+*.nc
+*.nc.partial
+*.nc.sha256
+
+# Figures: every run of the battery rewrites them whole. They are artifacts, not sources.
+model/*/plots/
+
+# Tables that the results scripts rewrite on every run.
+results/*.md
+results/*.csv
+
+# The LIVE dataset. The generator writes it in 5 seconds and it is deterministic by seed, so
+# versioning it would mean having the same file twice in the repo: here and in
+# synthetic_data/regimes/log__no_noise/, which is the backup against which config/log_regime.py
+# fixes the scale of the priors. Two copies of the same file in two paths get out of sync; the
+# backup is the one that rules, and step 1 of the README regenerates this one.
+/synthetic_data/dataset.csv
+/synthetic_data/media_share.csv
+/synthetic_data/true_parameters.json
+/synthetic_data/dataset_manifest.md

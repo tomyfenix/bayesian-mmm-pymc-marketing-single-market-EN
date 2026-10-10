@@ -1,0 +1,542 @@
+{
+  "metadata": {
+    "dataset_label": "log__no_noise",
+    "regime": "log",
+    "csv_sha256": "1cc979a4bf19fb5c1f72447f1fe6549a53fa98e9066e4139589711f405630b29",
+    "generated_at_utc": "2026-10-10T19:27:55.552369+00:00",
+    "generator_script": "synthetic_data/generate_dataset.py",
+    "git_commit": "7e68b488fa9f921fb8e378730f0f11613532179f",
+    "pymc_marketing_version": "0.19.2",
+    "seed": 42,
+    "n_weeks": 156,
+    "adstock": {
+      "normalized": true,
+      "l_max": 12,
+      "mode": "After"
+    },
+    "l_national_rescale_constant": 22000,
+    "noise_config": {
+      "impressions_noise_pct": 0.12,
+      "cpm_noise_pct": 0.05,
+      "acv_noise_sd": 1.2,
+      "price_noise_pct": 0.16,
+      "sales_noise_pct": 0.05,
+      "geo_regional_variation_impressions": [
+        0.9,
+        1.1
+      ],
+      "geo_regional_variation_cpm": [
+        0.95,
+        1.05
+      ],
+      "promo_discount_range": [
+        0.15,
+        0.3
+      ]
+    },
+    "configuration": {
+      "regime": "log",
+      "level": "zero",
+      "noise_by_variable": {},
+      "custom_signature": null,
+      "noise_seed": 42,
+      "design_seed": 42,
+      "stress": [],
+      "adstock_dgp": {
+        "normalized": true,
+        "l_max": 12
+      },
+      "media_gated_by_distribution": false,
+      "noise_in_regressors": false,
+      "snr_definition": "sd(signal)/sd(noise); signal = temporal sd of the deterministic target per geo x trade cell, in the estimator space (config/dgp_axes.py)"
+    },
+    "measured_snr": {
+      "sales": {
+        "Geo_Centro|Conveniencia": 335.35348597787345,
+        "Geo_Centro|Retail": 339.6595240966551,
+        "Geo_Norte|Conveniencia": 300.8657614863774,
+        "Geo_Norte|Retail": 360.97474004010064,
+        "Geo_Sur|Conveniencia": 299.5596398984968,
+        "Geo_Sur|Retail": 419.47180159481155
+      }
+    },
+    "geo_trade_being_modeled": {
+      "geo": "Geo_Centro",
+      "trade": "Retail"
+    },
+    "media_gated_by_distribution": false
+  },
+  "media_params_national_inputs": {
+    "tv": {
+      "adstock_alpha": 0.7,
+      "lam": 0.0003662,
+      "L_national": 0.3636
+    },
+    "meta": {
+      "adstock_alpha": 0.35,
+      "lam": 0.0004994,
+      "L_national": 0.2273
+    },
+    "tiktok": {
+      "adstock_alpha": 0.2,
+      "lam": 0.0009987,
+      "L_national": 0.1364
+    },
+    "ooh": {
+      "adstock_alpha": 0.5,
+      "lam": 0.0015694,
+      "L_national": 0.1136
+    }
+  },
+  "cpm_true_params": {
+    "tv": {
+      "cpm_base": 8.0,
+      "cpm_trend": 0.004,
+      "q4_multiplier": 1.25
+    },
+    "meta": {
+      "cpm_base": 5.0,
+      "cpm_trend": 0.015,
+      "q4_multiplier": 1.4
+    },
+    "tiktok": {
+      "cpm_base": 4.0,
+      "cpm_trend": 0.02,
+      "q4_multiplier": 1.35
+    },
+    "ooh": {
+      "cpm_base": 6.0,
+      "cpm_trend": 0.002,
+      "q4_multiplier": 1.1
+    }
+  },
+  "geo_hyperparams": {
+    "tv": {
+      "sigma_geo": 0.15
+    },
+    "meta": {
+      "sigma_geo": 0.2
+    },
+    "tiktok": {
+      "sigma_geo": 0.25
+    },
+    "ooh": {
+      "sigma_geo": 0.1
+    }
+  },
+  "geo_multipliers": {
+    "tv": {
+      "Geo_Norte": 0.9445308719266485,
+      "Geo_Centro": 1.0178427679141473,
+      "Geo_Sur": 1.0185377574224233
+    },
+    "meta": {
+      "Geo_Norte": 0.9153599073624212,
+      "Geo_Centro": 1.4305972780062672,
+      "Geo_Sur": 1.1082321851296884
+    },
+    "tiktok": {
+      "Geo_Norte": 1.0000218975168353,
+      "Geo_Centro": 1.2427621450203417,
+      "Geo_Sur": 0.7700274732071991
+    },
+    "ooh": {
+      "Geo_Norte": 0.9843433920515474,
+      "Geo_Centro": 0.9700382806201117,
+      "Geo_Sur": 1.057864316071596
+    }
+  },
+  "geo_population": {
+    "Geo_Norte": 1000000,
+    "Geo_Centro": 1300000,
+    "Geo_Sur": 600000
+  },
+  "geo_size": {
+    "Geo_Norte": 1.0,
+    "Geo_Centro": 1.3,
+    "Geo_Sur": 0.6
+  },
+  "geo_share": {
+    "Geo_Norte": 0.3448275862068966,
+    "Geo_Centro": 0.4482758620689655,
+    "Geo_Sur": 0.20689655172413793
+  },
+  "trade_params": {
+    "Retail": {
+      "base_sales": 45000,
+      "price_elasticity": -1.8,
+      "promo_lift": 0.22,
+      "distribution_elasticity": 1.05,
+      "n_skus": 6,
+      "media_attenuation": 0.6
+    },
+    "Conveniencia": {
+      "base_sales": 18000,
+      "price_elasticity": -0.9,
+      "promo_lift": 0.35,
+      "distribution_elasticity": 0.85,
+      "n_skus": 3,
+      "media_attenuation": 0.4
+    }
+  },
+  "price_true_params": {
+    "Retail": {
+      "step_weeks": [
+        20,
+        58,
+        96,
+        134
+      ],
+      "step_pct": [
+        0.22,
+        -0.19,
+        0.21,
+        -0.18
+      ]
+    },
+    "Conveniencia": {
+      "step_weeks": [
+        33,
+        71,
+        109,
+        147
+      ],
+      "step_pct": [
+        0.2,
+        -0.17,
+        0.19,
+        -0.16
+      ]
+    },
+    "geo_price_index": {
+      "Geo_Norte": 0.97,
+      "Geo_Centro": 1.0,
+      "Geo_Sur": 1.03
+    }
+  },
+  "acv_true_params": {
+    "Geo_Centro|Retail": {
+      "acv_min": 70,
+      "acv_max": 96,
+      "phases": [
+        [
+          36,
+          1.058,
+          0.75
+        ],
+        [
+          74,
+          -1.237,
+          0.839
+        ],
+        [
+          127,
+          1.333,
+          0.644
+        ],
+        [
+          138,
+          -0.969,
+          0.462
+        ]
+      ]
+    },
+    "Geo_Norte|Retail": {
+      "acv_min": 55,
+      "acv_max": 92,
+      "phases": [
+        [
+          49,
+          0.992,
+          0.647
+        ],
+        [
+          63,
+          -1.27,
+          0.847
+        ],
+        [
+          115,
+          0.884,
+          0.672
+        ]
+      ]
+    },
+    "Geo_Sur|Retail": {
+      "acv_min": 40,
+      "acv_max": 78,
+      "phases": [
+        [
+          37,
+          0.919,
+          0.585
+        ],
+        [
+          87,
+          -0.972,
+          0.548
+        ],
+        [
+          102,
+          0.603,
+          0.781
+        ]
+      ]
+    },
+    "Geo_Centro|Conveniencia": {
+      "acv_min": 45,
+      "acv_max": 75,
+      "phases": [
+        [
+          10,
+          -1.031,
+          0.804
+        ],
+        [
+          43,
+          1.231,
+          0.405
+        ],
+        [
+          93,
+          -1.326,
+          0.803
+        ],
+        [
+          120,
+          0.71,
+          0.628
+        ]
+      ]
+    },
+    "Geo_Norte|Conveniencia": {
+      "acv_min": 35,
+      "acv_max": 65,
+      "phases": [
+        [
+          49,
+          0.615,
+          0.528
+        ],
+        [
+          83,
+          -1.385,
+          0.808
+        ],
+        [
+          139,
+          1.251,
+          0.621
+        ]
+      ]
+    },
+    "Geo_Sur|Conveniencia": {
+      "acv_min": 25,
+      "acv_max": 55,
+      "phases": [
+        [
+          8,
+          1.126,
+          0.461
+        ],
+        [
+          61,
+          -1.039,
+          0.698
+        ],
+        [
+          74,
+          1.132,
+          0.665
+        ],
+        [
+          128,
+          -0.768,
+          0.701
+        ]
+      ]
+    }
+  },
+  "effective_params": {
+    "_ablation_comment": "Per-channel ablation convention (media_share_by_channel / {ch}_media_share in the CSV): INDIVIDUAL, not sequential -- each channel is switched off separately against the SAME base with the other channels on. The sum of the 4 does NOT equal the total media_share because of the cross terms of the multiplicative form (exp(sum) != product of individual exps via the subtraction of 1).",
+    "media": {
+      "tv|Geo_Norte|Retail": {
+        "L_effective": 0.20605885501951762,
+        "adstock_alpha": 0.7,
+        "lam": 0.0003662,
+        "x50_half_saturation": 3000.0335572586287
+      },
+      "tv|Geo_Norte|Conveniencia": {
+        "L_effective": 0.13737257001301176,
+        "adstock_alpha": 0.7,
+        "lam": 0.0003662,
+        "x50_half_saturation": 3000.0335572586287
+      },
+      "tv|Geo_Centro|Retail": {
+        "L_effective": 0.22205257824815036,
+        "adstock_alpha": 0.7,
+        "lam": 0.0003662,
+        "x50_half_saturation": 3000.0335572586287
+      },
+      "tv|Geo_Centro|Conveniencia": {
+        "L_effective": 0.14803505216543358,
+        "adstock_alpha": 0.7,
+        "lam": 0.0003662,
+        "x50_half_saturation": 3000.0335572586287
+      },
+      "tv|Geo_Sur|Retail": {
+        "L_effective": 0.22220419715927583,
+        "adstock_alpha": 0.7,
+        "lam": 0.0003662,
+        "x50_half_saturation": 3000.0335572586287
+      },
+      "tv|Geo_Sur|Conveniencia": {
+        "L_effective": 0.14813613143951723,
+        "adstock_alpha": 0.7,
+        "lam": 0.0003662,
+        "x50_half_saturation": 3000.0335572586287
+      },
+      "meta|Geo_Norte|Retail": {
+        "L_effective": 0.12483678416608701,
+        "adstock_alpha": 0.35,
+        "lam": 0.0004994,
+        "x50_half_saturation": 2199.86441463378
+      },
+      "meta|Geo_Norte|Conveniencia": {
+        "L_effective": 0.08322452277739134,
+        "adstock_alpha": 0.35,
+        "lam": 0.0004994,
+        "x50_half_saturation": 2199.86441463378
+      },
+      "meta|Geo_Centro|Retail": {
+        "L_effective": 0.19510485677449474,
+        "adstock_alpha": 0.35,
+        "lam": 0.0004994,
+        "x50_half_saturation": 2199.86441463378
+      },
+      "meta|Geo_Centro|Conveniencia": {
+        "L_effective": 0.13006990451632983,
+        "adstock_alpha": 0.35,
+        "lam": 0.0004994,
+        "x50_half_saturation": 2199.86441463378
+      },
+      "meta|Geo_Sur|Retail": {
+        "L_effective": 0.15114070540798688,
+        "adstock_alpha": 0.35,
+        "lam": 0.0004994,
+        "x50_half_saturation": 2199.86441463378
+      },
+      "meta|Geo_Sur|Conveniencia": {
+        "L_effective": 0.10076047027199127,
+        "adstock_alpha": 0.35,
+        "lam": 0.0004994,
+        "x50_half_saturation": 2199.86441463378
+      },
+      "tiktok|Geo_Norte|Retail": {
+        "L_effective": 0.0818417920927778,
+        "adstock_alpha": 0.2,
+        "lam": 0.0009987,
+        "x50_half_saturation": 1100.0423437149393
+      },
+      "tiktok|Geo_Norte|Conveniencia": {
+        "L_effective": 0.05456119472851854,
+        "adstock_alpha": 0.2,
+        "lam": 0.0009987,
+        "x50_half_saturation": 1100.0423437149393
+      },
+      "tiktok|Geo_Centro|Retail": {
+        "L_effective": 0.10170765394846475,
+        "adstock_alpha": 0.2,
+        "lam": 0.0009987,
+        "x50_half_saturation": 1100.0423437149393
+      },
+      "tiktok|Geo_Centro|Conveniencia": {
+        "L_effective": 0.06780510263230984,
+        "adstock_alpha": 0.2,
+        "lam": 0.0009987,
+        "x50_half_saturation": 1100.0423437149393
+      },
+      "tiktok|Geo_Sur|Retail": {
+        "L_effective": 0.06301904840727718,
+        "adstock_alpha": 0.2,
+        "lam": 0.0009987,
+        "x50_half_saturation": 1100.0423437149393
+      },
+      "tiktok|Geo_Sur|Conveniencia": {
+        "L_effective": 0.04201269893818479,
+        "adstock_alpha": 0.2,
+        "lam": 0.0009987,
+        "x50_half_saturation": 1100.0423437149393
+      },
+      "ooh|Geo_Norte|Retail": {
+        "L_effective": 0.06709284560223347,
+        "adstock_alpha": 0.5,
+        "lam": 0.0015694,
+        "x50_half_saturation": 700.0205738932775
+      },
+      "ooh|Geo_Norte|Conveniencia": {
+        "L_effective": 0.04472856373482232,
+        "adstock_alpha": 0.5,
+        "lam": 0.0015694,
+        "x50_half_saturation": 700.0205738932775
+      },
+      "ooh|Geo_Centro|Retail": {
+        "L_effective": 0.06611780920706681,
+        "adstock_alpha": 0.5,
+        "lam": 0.0015694,
+        "x50_half_saturation": 700.0205738932775
+      },
+      "ooh|Geo_Centro|Conveniencia": {
+        "L_effective": 0.04407853947137788,
+        "adstock_alpha": 0.5,
+        "lam": 0.0015694,
+        "x50_half_saturation": 700.0205738932775
+      },
+      "ooh|Geo_Sur|Retail": {
+        "L_effective": 0.07210403178343998,
+        "adstock_alpha": 0.5,
+        "lam": 0.0015694,
+        "x50_half_saturation": 700.0205738932775
+      },
+      "ooh|Geo_Sur|Conveniencia": {
+        "L_effective": 0.04806935452229333,
+        "adstock_alpha": 0.5,
+        "lam": 0.0015694,
+        "x50_half_saturation": 700.0205738932775
+      }
+    },
+    "demand": {
+      "Geo_Norte|Retail": {
+        "gamma_true": 1.05,
+        "eta_true": -1.8,
+        "promo_lift": 0.22
+      },
+      "Geo_Norte|Conveniencia": {
+        "gamma_true": 0.85,
+        "eta_true": -0.9,
+        "promo_lift": 0.35
+      },
+      "Geo_Centro|Retail": {
+        "gamma_true": 1.05,
+        "eta_true": -1.8,
+        "promo_lift": 0.22
+      },
+      "Geo_Centro|Conveniencia": {
+        "gamma_true": 0.85,
+        "eta_true": -0.9,
+        "promo_lift": 0.35
+      },
+      "Geo_Sur|Retail": {
+        "gamma_true": 1.05,
+        "eta_true": -1.8,
+        "promo_lift": 0.22
+      },
+      "Geo_Sur|Conveniencia": {
+        "gamma_true": 0.85,
+        "eta_true": -0.9,
+        "promo_lift": 0.35
+      }
+    }
+  },
+  "note": "Adstock and saturation act on impressions (*_impressions_000), not on spend. spend = impressions_000 * cpm. Saturation uses the SAME formula as pymc-marketing's LogisticSaturation: f(x) = L*(1-exp(-lam*x))/(1+exp(-lam*x)), with f(0)=0 exactly. Half-saturation point = ln(3)/lam (see effective_params.media.x50_half_saturation). FUNCTIONAL FORM: the media effect is MULTIPLICATIVE, not additive: sales_deterministic = base_combined * exp(media_log_multiplier), where media_log_multiplier is the sum of the saturation curves by channel (each with ceiling L_national * geo_multiplier, WITHOUT geo_size) attenuated by media_attenuation (formerly 'trade_factor', see trade_params). The L_national of each channel was rescaled (divided by ~22000, see metadata.l_national_rescale_constant) relative to an earlier additive version so that the media uplift would land in a reasonable order of magnitude. distribution_elasticity (in trade_params) IS the true elasticity of ACV on sales (gamma_true in effective_params.demand) -- before the media x distribution interaction was removed (MEDIA_GATED_BY_DISTRIBUTION=True) the effective gamma was not constant and exceeded distribution_elasticity. 'population' is fixed over time per geo (see geo_population), proportional to geo_size. See effective_params for the values ALREADY COMPOSED and ready to compare against a posterior -- do not rebuild L/gamma by hand from the input dictionaries (media_params_national_inputs, trade_params): use synthetic_data/true_params_reader.py."
+}
